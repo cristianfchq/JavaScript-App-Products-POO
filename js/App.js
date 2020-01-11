@@ -29,7 +29,7 @@ class UI{
 //(eventos del html)
 //cuando un usuario hace click
 //cuando un usuario esta escribiendo en un input
-document.getElementById('product-form').addEventListener('submit', function(){
+document.getElementById('product-form').addEventListener('submit', function(e){
     //console.log('Enviando formulario')
     // console.log(document.getElementById('name').value);
 
@@ -38,4 +38,6 @@ document.getElementById('product-form').addEventListener('submit', function(){
     const year = document.getElementById('year').value;
 
     console.log(name, price, year);
+
+    e.preventDefault();
 })
