@@ -39,5 +39,9 @@ document.getElementById('product-form').addEventListener('submit', function(e){
 
     console.log(name, price, year);
 
+    // console.log(new Product(name, price, year));
+
+    const product = new Product(name, price, year);
+
     e.preventDefault();
 })
