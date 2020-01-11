@@ -30,5 +30,12 @@ class UI{
 //cuando un usuario hace click
 //cuando un usuario esta escribiendo en un input
 document.getElementById('product-form').addEventListener('submit', function(){
-    alert('Enviando formulario');
+    //console.log('Enviando formulario')
+    // console.log(document.getElementById('name').value);
+
+    const name = document.getElementById('name').value;
+    const price = document.getElementById('price').value;
+    const year = document.getElementById('year').value;
+
+    console.log(name, price, year);
 })
