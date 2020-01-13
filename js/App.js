@@ -41,8 +41,14 @@ class UI{
         }
     }
 
-    showMessage(){
-
+    showMessage(message, cssClass){
+        const div = document.createElement('div');
+        div.className = `alert alert-${cssClass} mt-4`;
+        div.appendChild(document.createTextNode(message));
+        //mostrando en el DOM
+        const container = document.querySelector('.container');
+        const app = document.querySelector('#App');
+        container.insertBefore(div,app)
     }
 }
 
@@ -68,6 +74,7 @@ document.getElementById('product-form').addEventListener('submit', function(e){
 
     ui.addProduct(product);
     ui.resertForm();
+    ui.showMessage('Producto agregado satisfactoriamente','success');
 
     e.preventDefault();
 })
