@@ -49,6 +49,9 @@ class UI{
         const container = document.querySelector('.container');
         const app = document.querySelector('#App');
         container.insertBefore(div,app)
+        setTimeout(function(){
+            document.querySelector('.alert').remove();
+        }, 3000);
     }
 }
 
@@ -82,5 +85,8 @@ document.getElementById('product-form').addEventListener('submit', function(e){
 document.getElementById('product-list').addEventListener('click',function(e){
     //console.log(e.target);
     const ui = new UI();
+
     ui.deleteProduct(e.target);
+    ui.showMessage('Producto eliminado satisfactoriamente','info');
+
 })
