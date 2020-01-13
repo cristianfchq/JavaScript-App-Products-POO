@@ -15,7 +15,7 @@ class UI{
     addProduct(product){
         const productList = document.getElementById('product-list');
         const element = document.createElement('div');
-
+        //card una vez se inserta el producto
         element.innerHTML = `
         <div class="card text-center mb-4">
             <div class="card-body">
@@ -60,6 +60,6 @@ document.getElementById('product-form').addEventListener('submit', function(e){
     const ui = new UI();
 
     ui.addProduct(product);
-    
+
     e.preventDefault();
 })
