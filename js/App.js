@@ -22,6 +22,7 @@ class UI{
                 <strong>Product Name</strong> : ${product.name}
                 <strong>Product Price</strong> : ${product.price}
                 <strong>Product Year</strong> : ${product.year}
+                <a href="#" class = "btn btn-danger" name="delete">Delete</a>
             </div>
         </div>
         `;
@@ -30,8 +31,14 @@ class UI{
 
     }
 
-    deleteProduct(){
+    resertForm(){
+        document.getElementById('product-form').reset();
+    }
 
+    deleteProduct(element){
+        if(element.name === 'delete'){
+            element.parentElement.parentElement.parentElement.remove();
+        }
     }
 
     showMessage(){
@@ -60,6 +67,13 @@ document.getElementById('product-form').addEventListener('submit', function(e){
     const ui = new UI();
 
     ui.addProduct(product);
+    ui.resertForm();
 
     e.preventDefault();
+})
+
+document.getElementById('product-list').addEventListener('click',function(e){
+    //console.log(e.target);
+    const ui = new UI();
+    ui.deleteProduct(e.target);
 })
