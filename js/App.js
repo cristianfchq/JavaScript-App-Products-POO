@@ -75,9 +75,13 @@ document.getElementById('product-form').addEventListener('submit', function(e){
 
     const ui = new UI();
 
-    ui.addProduct(product);
-    ui.resertForm();
-    ui.showMessage('Producto agregado satisfactoriamente','success');
+    if(name === '' || price === '' || year === ''){
+        ui.showMessage('Completar los campos porfavor', 'danger');
+    }else{
+        ui.addProduct(product);
+        ui.resertForm();
+        ui.showMessage('Producto agregado satisfactoriamente','success');
+    }
 
     e.preventDefault();
 })
